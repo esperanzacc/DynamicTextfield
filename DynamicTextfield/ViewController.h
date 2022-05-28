@@ -8,7 +8,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
-
+- (void)viewDidLoad;
+- (IBAction)userInput:(UITextField *)sender;
 
 @end
 

@@ -17,18 +17,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-bT-wDr">
-                                <rect key="frame" x="10" y="431" width="394" height="34"/>
+                                <rect key="frame" x="100" y="431" width="214" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="xdD-sP-TJN"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zVX-bT-wDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ad-ar-sLr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zVX-bT-wDr" secondAttribute="trailing" constant="10" id="8kt-aa-oSA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zVX-bT-wDr" secondAttribute="trailing" constant="100" id="8kt-aa-oSA"/>
                             <constraint firstItem="zVX-bT-wDr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HUd-fM-4UM"/>
-                            <constraint firstItem="zVX-bT-wDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Qdr-ZE-q6n"/>
+                            <constraint firstItem="zVX-bT-wDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Qdr-ZE-q6n"/>
                         </constraints>
                     </view>
                     <connections>

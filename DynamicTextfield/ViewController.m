@@ -18,17 +18,25 @@
   [super viewDidLoad];
   _textField.delegate = self;
 }
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-  range.length = 3;
-  range.location = 0;
-  NSLog(@"%@", string);
-  NSLog(@"length: %lu", (unsigned long)range.length);
-  NSLog(@"location: %lu", (unsigned long)range.location);
-  // get the user text
-  // check if that == red -> change COlOR 
+- (IBAction)userInput:(UITextField *)sender {
+  NSString *text = [sender text];
+//  NSLog(@"%@", text);
+  NSArray *words = [text componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+  NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:text];
+  NSInteger location = 0;
+  NSMutableArray *ranges = [NSMutableArray new];
   
-  return YES;
+  for (NSString *word in words) {
+    if ([[word lowercaseString] isEqualToString:@"red"]) {
+      [ranges addObject:@[ @(location), @([word length])]];
+//      NSLog(@"%@",ranges);
+    }
+    location += [word length] + 1;
+  }
+  for (NSArray *range in ranges) {
+    [attributeStr addAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} range:NSMakeRange([[range objectAtIndex:0] integerValue], [[range objectAtIndex:1] integerValue])];
+    _textField.attributedText = attributeStr;
+  }
 }
 
 @end
